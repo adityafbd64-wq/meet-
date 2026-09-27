@@ -1,0 +1,1917 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vedio</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Meet You — Connect. Create. Grow.</title>
+
+<style>
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #5146f5;
+    --primary-dark: #3730c9;
+    --secondary: #7c6cff;
+    --text: #10245a;
+    --muted: #667085;
+    --light: #f7f8ff;
+    --border: #e5e7f2;
+    --white: #ffffff;
+    --success: #18b77a;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 76px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #eeeeF7;
+    background: rgba(255,255,255,.95);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(15px);
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 21px;
+    font-weight: 800;
+    color: #14265d;
+}
+
+.logo-mark {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: linear-gradient(135deg, #635bff, #4238ca);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 21px;
+    font-weight: 900;
+    box-shadow: 0 8px 20px rgba(81,70,245,.25);
+}
+
+.logo small {
+    display: block;
+    font-size: 8px;
+    color: #8188a4;
+    margin-top: -4px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 31px;
+    margin-left: auto;
+    margin-right: 30px;
+}
+
+.nav-links a {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1d2b55;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: 0;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.btn-outline {
+    background: white;
+    border: 1px solid #dfe2ef;
+    color: #27315c;
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.btn-primary {
+    color: white;
+    background: linear-gradient(135deg, #5d55ff, #4538e8);
+    box-shadow: 0 10px 25px rgba(81,70,245,.22);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(81,70,245,.3);
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 75% 20%, rgba(126,109,255,.25), transparent 35%),
+        linear-gradient(135deg, #f9fbff 0%, #eef0ff 100%);
+    padding: 75px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 5vw, 67px);
+    line-height: 1.05;
+    letter-spacing: -2.8px;
+    margin-bottom: 25px;
+    color: #10245a;
+}
+
+.hero h1 span {
+    color: var(--primary);
+}
+
+.hero p {
+    max-width: 600px;
+    color: #596782;
+    font-size: 17px;
+    margin-bottom: 32px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+.hero-image {
+    position: relative;
+    min-height: 390px;
+}
+
+.person-card {
+    position: absolute;
+    background: white;
+    border-radius: 25px;
+    padding: 15px;
+    box-shadow: 0 25px 70px rgba(52,48,120,.17);
+}
+
+.person-card.main {
+    width: 320px;
+    height: 345px;
+    right: 35px;
+    top: 10px;
+    overflow: hidden;
+}
+
+.person-card.main .fake-person {
+    height: 100%;
+    border-radius: 18px;
+    background:
+        radial-gradient(circle at 50% 26%, #e0b69a 0 14%, transparent 15%),
+        radial-gradient(circle at 50% 31%, #17192c 0 15%, transparent 16%),
+        linear-gradient(140deg,#8c7aff,#d9d7ff);
+    position: relative;
+}
+
+.fake-person::after {
+    content: "PROJECT READY";
+    position: absolute;
+    bottom: 24px;
+    left: 20px;
+    background: white;
+    padding: 12px 17px;
+    border-radius: 13px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 8px 25px rgba(0,0,0,.12);
+}
+
+.floating-card {
+    left: 10px;
+    top: 70px;
+    width: 190px;
+}
+
+.floating-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ddd;
+    float: left;
+    margin-right: 12px;
+}
+
+.floating-card strong {
+    display: block;
+    padding-top: 4px;
+}
+
+.floating-card span {
+    color: var(--success);
+    font-size: 11px;
+}
+
+.project-card {
+    right: 0;
+    bottom: 30px;
+    padding: 18px;
+    width: 220px;
+}
+
+.check {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #e6fff5;
+    color: #12a96d;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 9px;
+}
+
+/* =========================
+   SECTION
+========================= */
+
+.section {
+    padding: 85px 0;
+}
+
+.section-header {
+    margin-bottom: 35px;
+}
+
+.section-header h2 {
+    font-size: 31px;
+    margin-bottom: 7px;
+}
+
+.section-header p {
+    color: var(--muted);
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.category-card {
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    min-height: 280px;
+    transition: .3s;
+    overflow: hidden;
+    position: relative;
+}
+
+.category-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 45px rgba(40,45,110,.12);
+}
+
+.category-card.video {
+    background: linear-gradient(145deg,#f4efff,#fff);
+}
+
+.category-card.web {
+    background: linear-gradient(145deg,#eef7ff,#fff);
+}
+
+.category-card.app {
+    background: linear-gradient(145deg,#effff8,#fff);
+}
+
+.category-icon {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    font-size: 27px;
+    margin-bottom: 22px;
+    background: white;
+    box-shadow: 0 8px 22px rgba(0,0,0,.07);
+}
+
+.category-card h3 {
+    font-size: 21px;
+    margin-bottom: 9px;
+}
+
+.category-card p {
+    color: #68738d;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.category-card .btn {
+    font-size: 13px;
+    padding: 10px 16px;
+}
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.how {
+    background: #f8f9ff;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.step {
+    padding: 38px 30px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+}
+
+.step:last-child {
+    border: none;
+}
+
+.step-number {
+    width: 45px;
+    height: 45px;
+    margin: auto auto 15px;
+    border-radius: 50%;
+    background: #eeecff;
+    color: var(--primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 900;
+}
+
+.step h3 {
+    margin-bottom: 7px;
+}
+
+.step p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   PROFESSIONALS
+========================= */
+
+.professional-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+
+.professional-card {
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 23px;
+    background: white;
+    transition: .25s;
+}
+
+.professional-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(35,40,100,.1);
+}
+
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 17px;
+}
+
+.avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 19px;
+    font-weight: 800;
+    background: linear-gradient(135deg,#695dff,#35a8ff);
+}
+
+.profile-info h3 {
+    font-size: 16px;
+}
+
+.profile-info p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.rating {
+    color: #f5a623;
+    font-size: 13px;
+}
+
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 17px 0;
+}
+
+.skill {
+    padding: 5px 9px;
+    border-radius: 7px;
+    background: #f2f3ff;
+    color: #5551a3;
+    font-size: 11px;
+}
+
+.card-actions {
+    display: flex;
+    gap: 8px;
+}
+
+.card-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px solid #dfe1ed;
+    background: white;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.card-actions .contact {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* =========================
+   DASHBOARD
+========================= */
+
+.dashboard-section {
+    background: #f7f8ff;
+}
+
+.dashboard {
+    border-radius: 25px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: white;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    min-height: 440px;
+    box-shadow: 0 20px 50px rgba(42,45,100,.08);
+}
+
+.sidebar {
+    background: #fbfbff;
+    border-right: 1px solid var(--border);
+    padding: 25px 15px;
+}
+
+.side-logo {
+    font-weight: 800;
+    margin-bottom: 30px;
+    padding-left: 10px;
+}
+
+.side-link {
+    display: block;
+    padding: 11px 12px;
+    border-radius: 9px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #69738c;
+}
+
+.side-link.active,
+.side-link:hover {
+    background: #ecebff;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.dashboard-main {
+    padding: 30px;
+}
+
+.dashboard-main h2 {
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 13px;
+    margin-bottom: 25px;
+}
+
+.stat {
+    border: 1px solid var(--border);
+    border-radius: 13px;
+    padding: 17px;
+}
+
+.stat span {
+    display: block;
+    color: #778097;
+    font-size: 11px;
+}
+
+.stat strong {
+    font-size: 23px;
+}
+
+.activity {
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.activity-row {
+    padding: 15px 0;
+    border-bottom: 1px solid #eeeef5;
+    display: flex;
+    justify-content: space-between;
+}
+
+.activity-row:last-child {
+    border: none;
+}
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-section {
+    padding: 80px 0;
+}
+
+.chat {
+    max-width: 850px;
+    margin: auto;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 270px 1fr;
+    min-height: 450px;
+    box-shadow: 0 20px 50px rgba(30,40,100,.1);
+}
+
+.chat-users {
+    border-right: 1px solid var(--border);
+    padding: 18px;
+}
+
+.chat-users h3 {
+    margin-bottom: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 8px;
+    border-radius: 10px;
+}
+
+.user:hover {
+    background: #f4f4ff;
+}
+
+.user .mini-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg,#635bff,#35a8ff);
+}
+
+.user span {
+    font-size: 12px;
+}
+
+.chat-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    padding: 17px;
+    border-bottom: 1px solid var(--border);
+}
+
+.online {
+    color: #16a86e;
+    font-size: 11px;
+}
+
+.messages {
+    flex: 1;
+    padding: 25px;
+    background: #fafaff;
+}
+
+.message {
+    max-width: 65%;
+    padding: 11px 14px;
+    border-radius: 13px;
+    margin-bottom: 12px;
+    font-size: 13px;
+}
+
+.message.received {
+    background: white;
+    border: 1px solid var(--border);
+}
+
+.message.sent {
+    margin-left: auto;
+    color: white;
+    background: var(--primary);
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+    padding: 13px;
+    border-top: 1px solid var(--border);
+}
+
+.chat-input input {
+    flex: 1;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+    outline: none;
+}
+
+.chat-input button {
+    border: 0;
+    width: 45px;
+    border-radius: 10px;
+    background: var(--primary);
+    color: white;
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta {
+    padding: 80px 0;
+}
+
+.cta-box {
+    text-align: center;
+    border-radius: 30px;
+    padding: 70px 25px;
+    color: white;
+    background:
+        radial-gradient(circle at 10% 30%,rgba(255,255,255,.15),transparent 30%),
+        radial-gradient(circle at 90% 70%,rgba(255,255,255,.15),transparent 30%),
+        linear-gradient(135deg,#5146f5,#3125bd);
+}
+
+.cta-box h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.cta-box p {
+    opacity: .85;
+    margin-bottom: 25px;
+}
+
+.cta-box .btn {
+    background: white;
+    color: var(--primary);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 45px 0;
+    border-top: 1px solid var(--border);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    color: #667085;
+    font-size: 13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(12,18,50,.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    padding: 20px;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-box {
+    width: min(500px,100%);
+    background: white;
+    border-radius: 22px;
+    padding: 30px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    border: none;
+    background: none;
+    font-size: 25px;
+}
+
+.modal-box h2 {
+    margin-bottom: 7px;
+}
+
+.modal-box p {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 12px;
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--primary);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding-top: 50px;
+    }
+
+    .hero-image {
+        min-height: 350px;
+    }
+
+    .category-grid,
+    .professional-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dashboard {
+        grid-template-columns: 160px 1fr;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width: 650px) {
+
+    .nav-actions .btn-outline {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-image {
+        transform: scale(.85);
+        margin: -30px;
+    }
+
+    .category-grid,
+    .professional-grid,
+    .steps {
+        grid-template-columns: 1fr;
+    }
+
+    .step {
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .chat {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-users {
+        display: none;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        flex-wrap: wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+    <div class="container nav-content">
+
+        <a href="#" class="logo">
+            <div class="logo-mark">M</div>
+
+            <div>
+                Meet You
+                <small>Meet. Connect. Create.</small>
+            </div>
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#professionals">Find Professionals</a>
+            <a href="#categories">Categories</a>
+            <a href="#how">How It Works</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button class="btn btn-outline"
+                    onclick="openModal('Login')">
+                Login
+            </button>
+
+            <button class="btn btn-primary"
+                    onclick="openModal('Create Account')">
+                Sign Up
+            </button>
+        </div>
+
+    </div>
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <h1>
+                Meet the Right Person
+                <br>
+                for <span>Your Project.</span>
+            </h1>
+
+            <p>
+                Find talented video editors, web developers,
+                and app developers. Connect directly, discuss
+                your project, and turn your idea into reality.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#professionals"
+                   class="btn btn-primary">
+                    Find a Professional →
+                </a>
+
+                <button class="btn btn-outline"
+                        onclick="openModal('Join as a Professional')">
+                    Join as a Professional
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="person-card floating-card">
+
+                <div class="avatar">RS</div>
+
+                <strong>Rahul Sharma</strong>
+
+                <span>● Available now</span>
+
+                <div style="clear:both"></div>
+
+            </div>
+
+
+            <div class="person-card main">
+
+                <div class="fake-person"></div>
+
+            </div>
+
+
+            <div class="person-card project-card">
+
+                <div>
+                    <span class="check">✓</span>
+                    <strong>Project Discussed</strong>
+                </div>
+
+                <small style="color:#777;">
+                    Ready to start?
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section class="section" id="categories">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>Explore Our Top Categories</h2>
+
+            <p>
+                Find the perfect professional for your needs.
+            </p>
+
+        </div>
+
+
+        <div class="category-grid">
+
+            <div class="category-card video">
+
+                <div class="category-icon">🎬</div>
+
+                <h3>Video Editor</h3>
+
+                <p>
+                    Find skilled video editors for YouTube videos,
+                    reels, advertisements, short films and social
+                    media content.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="filterProfessionals('Video Editor')">
+                    Find Video Editors →
+                </button>
+
+            </div>
+
+
+            <div class="category-card web">
+
+                <div class="category-icon">💻</div>
+
+                <h3>Web Developer</h3>
+
+                <p>
+                    Connect with web developers who can build
+                    websites, landing pages, e-commerce stores
+                    and web applications.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="filterProfessionals('Web Developer')">
+                    Find Web Developers →
+                </button>
+
+            </div>
+
+
+            <div class="category-card app">
+
+                <div class="category-icon">📱</div>
+
+                <h3>App Developer</h3>
+
+                <p>
+                    Find developers for Android, iOS and
+                    cross-platform mobile applications.
+                </p>
+
+                <button class="btn btn-primary"
+                        onclick="filterProfessionals('App Developer')">
+                    Find App Developers →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="section how" id="how">
+
+    <div class="container">
+
+        <div class="section-header"
+             style="text-align:center">
+
+            <h2>How It Works</h2>
+
+            <p>
+                Get started in 3 simple steps.
+            </p>
+
+        </div>
+
+
+        <div class="steps">
+
+            <div class="step">
+
+                <div class="step-number">1</div>
+
+                <h3>Find</h3>
+
+                <p>
+                    Choose the type of professional you need.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">2</div>
+
+                <h3>Connect</h3>
+
+                <p>
+                    View profiles and contact professionals directly.
+                </p>
+
+            </div>
+
+
+            <div class="step">
+
+                <div class="step-number">3</div>
+
+                <h3>Work Together</h3>
+
+                <p>
+                    Discuss your project and start working together.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PROFESSIONALS
+========================= -->
+
+<section class="section" id="professionals">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>Featured Professionals</h2>
+
+            <p>
+                Skilled people ready to work on your project.
+            </p>
+
+        </div>
+
+
+        <div class="professional-grid">
+
+
+            <!-- PERSON 1 -->
+
+            <div class="professional-card"
+                 data-category="Video Editor">
+
+                <div class="profile-top">
+
+                    <div class="avatar">RS</div>
+
+                    <div class="profile-info">
+
+                        <h3>Rahul Sharma</h3>
+
+                        <p>Video Editor</p>
+
+                        <div class="rating">
+                            ★ 4.9
+                            <span style="color:#777">
+                                (124 reviews)
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p style="font-size:13px;color:#69738c;">
+                    Professional video editor specializing
+                    in YouTube and short-form content.
+                </p>
+
+                <div class="skills">
+
+                    <span class="skill">Premiere Pro</span>
+                    <span class="skill">After Effects</span>
+                    <span class="skill">DaVinci</span>
+
+                </div>
+
+                <strong>₹500 / project</strong>
+
+                <div class="card-actions">
+
+                    <button onclick="viewProfile('Rahul Sharma')">
+                        View Profile
+                    </button>
+
+                    <button class="contact"
+                            onclick="contactUser('Rahul Sharma')">
+                        Contact
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERSON 2 -->
+
+            <div class="professional-card"
+                 data-category="Web Developer">
+
+                <div class="profile-top">
+
+                    <div class="avatar"
+                         style="background:linear-gradient(135deg,#ff8b7a,#ff4d9a)">
+                        PM
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h3>Priya Mehta</h3>
+
+                        <p>Web Developer</p>
+
+                        <div class="rating">
+                            ★ 4.8
+                            <span style="color:#777">
+                                (98 reviews)
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p style="font-size:13px;color:#69738c;">
+                    Full-stack developer building modern,
+                    fast and responsive websites.
+                </p>
+
+                <div class="skills">
+
+                    <span class="skill">React</span>
+                    <span class="skill">Node.js</span>
+                    <span class="skill">MongoDB</span>
+
+                </div>
+
+                <strong>₹800 / project</strong>
+
+                <div class="card-actions">
+
+                    <button onclick="viewProfile('Priya Mehta')">
+                        View Profile
+                    </button>
+
+                    <button class="contact"
+                            onclick="contactUser('Priya Mehta')">
+                        Contact
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PERSON 3 -->
+
+            <div class="professional-card"
+                 data-category="App Developer">
+
+                <div class="profile-top">
+
+                    <div class="avatar"
+                         style="background:linear-gradient(135deg,#21c58a,#1585ff)">
+                        AV
+                    </div>
+
+                    <div class="profile-info">
+
+                        <h3>Aman Verma</h3>
+
+                        <p>App Developer</p>
+
+                        <div class="rating">
+                            ★ 4.7
+                            <span style="color:#777">
+                                (76 reviews)
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <p style="font-size:13px;color:#69738c;">
+                    Mobile developer creating Android,
+                    iOS and cross-platform applications.
+                </p>
+
+                <div class="skills">
+
+                    <span class="skill">Flutter</span>
+                    <span class="skill">React Native</span>
+                    <span class="skill">Firebase</span>
+
+                </div>
+
+                <strong>₹700 / project</strong>
+
+                <div class="card-actions">
+
+                    <button onclick="viewProfile('Aman Verma')">
+                        View Profile
+                    </button>
+
+                    <button class="contact"
+                            onclick="contactUser('Aman Verma')">
+                        Contact
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CUSTOMER DASHBOARD
+========================= -->
+
+<section class="section dashboard-section">
+
+    <div class="container">
+
+        <div class="section-header">
+
+            <h2>Customer Dashboard</h2>
+
+            <p>
+                Manage your professionals, conversations and projects.
+            </p>
+
+        </div>
+
+
+        <div class="dashboard">
+
+            <aside class="sidebar">
+
+                <div class="side-logo">
+                    Meet You
+                </div>
+
+                <a class="side-link active">◉ Overview</a>
+                <a class="side-link">⌕ Find Professionals</a>
+                <a class="side-link">💬 Messages</a>
+                <a class="side-link">▣ Projects</a>
+                <a class="side-link">♡ Favorites</a>
+                <a class="side-link">⚙ Settings</a>
+
+            </aside>
+
+
+            <main class="dashboard-main">
+
+                <h2>
+                    Good morning, Aditya! 👋
+                </h2>
+
+                <div class="stats">
+
+                    <div class="stat">
+                        <span>Total Conversations</span>
+                        <strong>5</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Active Projects</span>
+                        <strong>2</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Saved Professionals</span>
+                        <strong>3</strong>
+                    </div>
+
+                    <div class="stat">
+                        <span>Pending Replies</span>
+                        <strong>1</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="activity">
+
+                    <h3>Recent Conversations</h3>
+
+                    <div class="activity-row">
+
+                        <span>
+                            🎬 Rahul Sharma
+                        </span>
+
+                        <small>10:34 AM</small>
+
+                    </div>
+
+                    <div class="activity-row">
+
+                        <span>
+                            💻 Priya Mehta
+                        </span>
+
+                        <small>Yesterday</small>
+
+                    </div>
+
+                    <div class="activity-row">
+
+                        <span>
+                            📱 Aman Verma
+                        </span>
+
+                        <small>2 days ago</small>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CHAT
+========================= -->
+
+<section class="chat-section">
+
+    <div class="container">
+
+        <div class="section-header"
+             style="text-align:center">
+
+            <h2>Connect & Talk</h2>
+
+            <p>
+                Discuss your project directly with professionals.
+            </p>
+
+        </div>
+
+
+        <div class="chat">
+
+            <aside class="chat-users">
+
+                <h3>Messages</h3>
+
+                <div class="user">
+                    <div class="mini-avatar"></div>
+                    <span>Rahul Sharma<br>
+                        <small>Video Editor</small>
+                    </span>
+                </div>
+
+                <div class="user">
+                    <div class="mini-avatar"></div>
+                    <span>Priya Mehta<br>
+                        <small>Web Developer</small>
+                    </span>
+                </div>
+
+                <div class="user">
+                    <div class="mini-avatar"></div>
+                    <span>Aman Verma<br>
+                        <small>App Developer</small>
+                    </span>
+                </div>
+
+            </aside>
+
+
+            <div class="chat-main">
+
+                <div class="chat-header">
+
+                    <strong>Rahul Sharma</strong>
+
+                    <div class="online">
+                        ● Online
+                    </div>
+
+                </div>
+
+
+                <div class="messages" id="messages">
+
+                    <div class="message received">
+                        Hi! I need a 5-minute YouTube video edited.
+                    </div>
+
+                    <div class="message sent">
+                        Sure! Please send me your footage and requirements.
+                    </div>
+
+                    <div class="message received">
+                        Perfect. I will send the files today.
+                    </div>
+
+                </div>
+
+
+                <div class="chat-input">
+
+                    <input
+                        id="messageInput"
+                        type="text"
+                        placeholder="Type a message..."
+                    >
+
+                    <button onclick="sendMessage()">
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <div class="cta-box">
+
+            <h2>Ready to Meet Your Next Professional?</h2>
+
+            <p>
+                Find talented people and bring your project to life.
+            </p>
+
+            <button class="btn"
+                    onclick="openModal('Create Account')">
+                Get Started →
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div>
+            <strong>Meet You</strong>
+
+            <p style="color:#778097;font-size:13px;">
+                Meet. Connect. Create.
+            </p>
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#">About</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="modal" id="modal">
+
+    <div class="modal-box">
+
+        <button class="close"
+                onclick="closeModal()">
+            ×
+        </button>
+
+        <h2 id="modalTitle">
+            Create Account
+        </h2>
+
+        <p>
+            Join Meet You and start connecting with professionals.
+        </p>
+
+        <input
+            class="form-input"
+            type="text"
+            placeholder="Your Name"
+        >
+
+        <input
+            class="form-input"
+            type="email"
+            placeholder="Email Address"
+        >
+
+        <input
+            class="form-input"
+            type="password"
+            placeholder="Password"
+        >
+
+        <button
+            class="btn btn-primary"
+            style="width:100%"
+            onclick="closeModal()">
+
+            Continue →
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+/* =========================
+   MODAL
+========================= */
+
+function openModal(title) {
+
+    document.getElementById("modalTitle").innerText = title;
+
+    document.getElementById("modal")
+        .classList.add("active");
+}
+
+function closeModal() {
+
+    document.getElementById("modal")
+        .classList.remove("active");
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+function contactUser(name) {
+
+    document.getElementById("messages").innerHTML += `
+
+        <div class="message sent">
+            Hi ${name}, I would like to discuss a project with you.
+        </div>
+
+    `;
+
+    document.querySelector(".chat-section")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+/* =========================
+   PROFILE
+========================= */
+
+function viewProfile(name) {
+
+    alert(
+        "Opening professional profile for " + name
+    );
+}
+
+
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+function filterProfessionals(category) {
+
+    const cards =
+        document.querySelectorAll(".professional-card");
+
+    cards.forEach(card => {
+
+        if (
+            card.dataset.category === category
+        ) {
+
+            card.style.display = "block";
+
+        } else {
+
+            card.style.display = "none";
+
+        }
+
+    });
+
+    document
+        .getElementById("professionals")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+function sendMessage() {
+
+    const input =
+        document.getElementById("messageInput");
+
+    const text = input.value.trim();
+
+    if (!text) return;
+
+    const messages =
+        document.getElementById("messages");
+
+    const message =
+        document.createElement("div");
+
+    message.className = "message sent";
+
+    message.innerText = text;
+
+    messages.appendChild(message);
+
+    input.value = "";
+
+    messages.scrollTop =
+        messages.scrollHeight;
+
+}
+
+
+/* ENTER TO SEND */
+
+document
+    .getElementById("messageInput")
+    .addEventListener("keydown", function(event) {
+
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+
+    });
+
+
+/* CLOSE MODAL WHEN CLICKING OUTSIDE */
+
+document
+    .getElementById("modal")
+    .addEventListener("click", function(event) {
+
+        if (event.target === this) {
+            closeModal();
+        }
+
+    });
+
+</script>
+
+</body>
+</html>
+</body>
+</html>
